@@ -58,7 +58,7 @@ public abstract class UEROptimizer {
         PrintWriter fileIn= null;
         
         if(static_muer.Static_MUER.printFlows){
-            fileIn=   new PrintWriter("Networks/"+network.getNetName() +"/"+"GapRate_"+epochTime+".txt");
+            fileIn=   new PrintWriter("Networks/"+network.getNetName() +"/Outputs/"+"GapRate_"+epochTime+".txt");
             fileIn.println("Iter. #\tRelGap\tSPTT\tTSTT\tSORobjective\tRuntime");
         }
         

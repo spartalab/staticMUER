@@ -47,7 +47,7 @@ public class Network {
     }
     
     public void readAllInputs(){
-        String folderName = "Networks/"+netName+"/";
+        String folderName = "Networks/"+netName+"/Inputs/";
         readNetwork(folderName+"Links.txt", folderName+"Trips.txt", 
                 folderName+"VOT.txt");
     }
@@ -234,7 +234,7 @@ public class Network {
     
     public void printLinkStateFlows(){
         String epochTime = Integer.toString((int)(System.currentTimeMillis()/1000));
-        try(PrintWriter fileIn= new PrintWriter("Networks/"+netName +"/"+"LinkStateFlows_"+epochTime+".txt")){
+        try(PrintWriter fileIn= new PrintWriter("Networks/"+netName +"/Outputs/"+"LinkStateFlows_"+epochTime+".txt")){
             fileIn.println("Link\tLinkState\tVOT\tVOTFlow\tTotalCostForThisVOT");
             for(Link l: graph.getLinks()){
                 for(LinkState ls: l.getStates()){
@@ -251,8 +251,8 @@ public class Network {
             e.printStackTrace();
         }
         
-        try(PrintWriter fileIn= new PrintWriter("Networks/"+netName +"/"+"TotalLinkStateFlows_"+epochTime+".txt")){
-            fileIn.println("Link\tLinkState\tFlow\tProb");
+        try(PrintWriter fileIn= new PrintWriter("Networks/"+netName +"/Outputs/"+"TotalLinkStateFlows_"+epochTime+".txt")){
+            fileIn.println("Link\tTotalExpectedFlow");
             for(Link l: graph.getLinks()){
                 fileIn.print(l);
                 double totalFlow=0.0;
