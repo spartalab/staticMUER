@@ -1,0 +1,2 @@
+VOTclass ($/hr)	Proportion
+10	1.0

@@ -1,0 +1,4 @@
+LinkID	FromNode	ToNode	NoStates	BPR for each state and toll {(ffTT (sec), cap(veh), alpha, power, toll($), probOfOccurence),...}
+102	1	2	1	{(0.5,1000,0.0,4,0,1.0)}
+203	2	3	1	{(0.5,1000,0.0,4,0,1.0)}
+103	1	3	2	{(1,1000,0.15,4,0,0.2);(2,1000,0.15,4,0,0.8)}
