@@ -15,7 +15,7 @@ import static_muer.osp.LinkState;
  * @author Venktesh
  */
 public abstract class UEROptimizer {
-    private Integer iteration = 1;
+    private Integer iteration = 0;
     protected final Integer maxIterations;
     protected final Integer relativeGapExp; //exponent of relative gap -4 for 10^(-4)
     protected final Network network;

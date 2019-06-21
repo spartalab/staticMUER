@@ -82,17 +82,40 @@ public class LinkState{
         return toll + (vot)*(getTravelTime());
     }
     
+    public double getCost(double vot, Map<Double, Double> flowVar){
+        return toll + (vot)*(getTravelTime(flowVar));
+    }
+    
+    //assuming tolls are constant
+    public double getCostDerivative(double vot, Map<Double, Double> flowVar){
+        return (vot)*getTTDerivate(flowVar);
+//        return getTTDerivate(flowVar); //trying this new form
+    }
+    
+    public double getCostDerivative(double vot){
+        return (vot)*getTTDerivate(this.flow); //trying this new form
+//        return getTTDerivate(this.flow); //trying this new form
+    }
+    
     public double getTravelTime(){
+        return getTravelTime(flow);
+    }
+    
+    public double getTravelTime(Map<Double, Double> flowVar){
         double totFlow =0.0;
-        for(Double vot: flow.keySet())
-            totFlow+= flow.get(vot);
+        for(Double vot: flowVar.keySet())
+            totFlow+= flowVar.get(vot);
         return fftt*(1+ alpha*Math.pow(totFlow/capacity, power));
     }
     
     public double getTTDerivate(){
+       return getTTDerivate(flow);
+    }
+    
+    public double getTTDerivate(Map<Double, Double> flowVar){
         double totFlow =0.0;
-        for(Double vot: flow.keySet())
-            totFlow+= flow.get(vot);
+        for(Double vot: flowVar.keySet())
+            totFlow+= flowVar.get(vot);
        return fftt*alpha*power*(1/capacity)*Math.pow(totFlow/capacity, power);
     }
     

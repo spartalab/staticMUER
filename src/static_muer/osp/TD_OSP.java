@@ -9,6 +9,8 @@ import static_muer.network.Node;
 
 /**
  * Implements online shortest path (later, we seek to make it time dependent)
+ * Additionally see if you can extend this class and function to incorporate the 
+ * method proposed in Waller and Ziliaskopoulos (2002)
  * @author Venktesh
  */
 public class TD_OSP {
